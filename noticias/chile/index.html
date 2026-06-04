@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notícias do Chile - Política, economia, imigração e protestos. Cobertura completa do governo Kast e atualizações diárias sobre o país.">
+    <meta name="keywords" content="Chile, notícias Chile, governo Kast, protestos Chile, economia Chile, imigração Chile, atualidades Chile">
+    <meta name="author" content="Suricatos Anônimos">
+    <meta property="og:title" content="Notícias do Chile | Suricatos Anônimos">
+    <meta property="og:description" content="Cobertura completa do Chile: política, economia, imigração e protestos. Atualizações diárias.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suricatosanonimos.github.io/noticias/chile/">
+    <meta property="og:image" content="https://suricatosanonimos.github.io/img/noticias/chile-og.jpg">
+    <title>Notícias do Chile | Suricatos Anônimos</title>
+    <link rel="canonical" href="https://suricatosanonimos.github.io/noticias/chile/">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/noticias.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para página do Chile */
+        .currency-converter {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 24px;
+            margin: 32px 0;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .converter-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+        
+        .converter-title span {
+            font-size: 1.8rem;
+        }
+        
+        .converter-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 16px 24px;
+            border-radius: 16px;
+        }
+        
+        .currency-input {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 40px;
+        }
+        
+        .currency-input input {
+            border: none;
+            padding: 10px 0;
+            width: 120px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            outline: none;
+            text-align: right;
+        }
+        
+        .currency-input span {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .currency-switch {
+            background: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 40px;
+            transition: transform 0.2s;
+        }
+        
+        .currency-switch:hover {
+            transform: rotate(180deg);
+        }
+        
+        .exchange-rate {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 8px;
+            text-align: center;
+        }
+        
+        .section-hero-chile {
+            background: #f5f5f5;
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        
+        @media (max-width: 768px) {
+            .currency-converter {
+                flex-direction: column;
+                text-align: center;
+            }
+            .converter-box {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="../../index.html" class="logo">Suricatos Anônimos</a>
+                <span class="slogan">Notícias do Brasil, Chile e do mundo.</span>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="#">Brasil</a></li>
+                    <li><a href="index.html" class="active">Chile</a></li>
+                    <li><a href="#">Economia</a></li>
+                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="#">Imigração</a></li>
+                    <li><a href="#">Mundo</a></li>
+                    <li><a href="../../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <!-- CONVERSOR DE MOEDAS DINÂMICO -->
+            <div class="currency-converter" id="currencyConverter">
+                <div class="converter-title">
+                    <span>🇨🇱💰</span>
+                    <span>Conversor: Real × Peso Chileno</span>
+                </div>
+                <div class="converter-box">
+                    <div class="currency-input">
+                        <input type="number" id="brlInput" value="1" step="0.01" placeholder="R$">
+                        <span>BRL</span>
+                    </div>
+                    <button class="currency-switch" id="switchCurrency">🔄</button>
+                    <div class="currency-input">
+                        <input type="number" id="clpInput" value="180" step="1" placeholder="$">
+                        <span>CLP</span>
+                    </div>
+                </div>
+                <div class="exchange-rate" id="exchangeRate">
+                    Taxa: 1 BRL = 180 CLP | 1 CLP = 0,0056 BRL
+                </div>
+            </div>
+
+            <!-- HERO DA SEÇÃO CHILE -->
+            <div class="section-hero-chile">
+                <span style="font-size: 0.8rem; color: #666; text-transform: uppercase;">🇨🇱 Em destaque</span>
+                <h1 style="font-size: 2rem; margin: 16px 0;">Notícias do Chile</h1>
+                <p style="color: #444; font-size: 1.1rem;">Acompanhe as principais notícias sobre política, economia, imigração e protestos no Chile. Cobertura completa do governo de José Antonio Kast e suas reformas.</p>
+            </div>
+
+            <!-- NOTÍCIAS DO CHILE (GRID DINÂMICO) -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📰 Últimas do Chile</h2>
+                    <a href="#" class="section-link">Ver todas →</a>
+                </div>
+                <div class="grid-cards" id="chileNoticiasGrid">
+                    <!-- JS preenche dinamicamente -->
+                </div>
+            </section>
+
+            <!-- CATEGORIAS CHILE -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📂 Categorias</h2>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="#" class="tag">🇨🇱 Política</a>
+                    <a href="#" class="tag">💰 Economia</a>
+                    <a href="#" class="tag">🚨 Imigração</a>
+                    <a href="#" class="tag">📱 Tecnologia</a>
+                    <a href="#" class="tag">✊ Protestos</a>
+                    <a href="#" class="tag">🌎 Relações Exteriores</a>
+                </div>
+            </section>
+
+            <!-- NEWSLETTER -->
+            <section class="newsletter">
+                <div class="newsletter-inner">
+                    <h2 class="newsletter-title">📬 Newsletter Suricatos</h2>
+                    <p>Receba as principais notícias do Chile e do mundo diretamente no seu e-mail.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" id="newsletterEmail" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                    </form>
+                    <span id="formFeedback" class="feedback-msg"></span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                <a href="../../sobre.html">Sobre</a>
+                <a href="../../contato.html">Contato</a>
+                <a href="../../privacidade.html">Política de Privacidade</a>
+                <a href="../../termos.html">Termos de Uso</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 Suricatos Anônimos — Informação com seriedade e independência.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== CONVERSOR DE MOEDAS DINÂMICO ==========
+        // Taxa de câmbio atualizada (1 BRL = CLP)
+        let exchangeRate = 180; // Taxa fixa inicial (pode ser atualizada via API)
+        
+        // Elementos do DOM
+        const brlInput = document.getElementById('brlInput');
+        const clpInput = document.getElementById('clpInput');
+        const switchBtn = document.getElementById('switchCurrency');
+        const exchangeRateSpan = document.getElementById('exchangeRate');
+        
+        function updateExchangeRateDisplay() {
+            exchangeRateSpan.textContent = `Taxa: 1 BRL = ${exchangeRate} CLP | 1 CLP = ${(1/exchangeRate).toFixed(4)} BRL`;
+        }
+        
+        function brlToClp(value) {
+            return (value * exchangeRate).toFixed(0);
+        }
+        
+        function clpToBrl(value) {
+            return (value / exchangeRate).toFixed(2);
+        }
+        
+        function updateFromBRL() {
+            let brlValue = parseFloat(brlInput.value) || 0;
+            clpInput.value = brlToClp(brlValue);
+        }
+        
+        function updateFromCLP() {
+            let clpValue = parseFloat(clpInput.value) || 0;
+            brlInput.value = clpToBrl(clpValue);
+        }
+        
+        brlInput.addEventListener('input', updateFromBRL);
+        clpInput.addEventListener('input', updateFromCLP);
+        
+        switchBtn.addEventListener('click', () => {
+            let temp = brlInput.value;
+            brlInput.value = clpInput.value;
+            clpInput.value = temp;
+            updateFromBRL();
+        });
+        
+        // Tentar obter taxa de câmbio real via API (opcional)
+        async function fetchRealExchangeRate() {
+            try {
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/BRL');
+                const data = await response.json();
+                if (data.rates && data.rates.CLP) {
+                    exchangeRate = data.rates.CLP;
+                    updateExchangeRateDisplay();
+                    updateFromBRL();
+                }
+            } catch (error) {
+                console.log('Usando taxa fixa: API não disponível');
+            }
+        }
+        
+        fetchRealExchangeRate();
+        updateExchangeRateDisplay();
+        updateFromBRL();
+        
+        // ========== NOTÍCIAS DO CHILE (DADOS) ==========
+        const chileNoticias = [
+            {
+                id: 1,
+                categoria: "Política",
+                titulo: "Chile amplia detenção de imigrantes ilegais de 5 para 180 dias",
+                resumo: "Governo Kast anuncia reforma legislativa que prorroga prazo de detenção de imigrantes em situação irregular.",
+                data: "04/06/2026",
+                imagem: "../../img/noticias/pexels-daniel-cruz-170431136-13247360.jpg",
+                link: "luta-contra-imigracao.html"
+            },
+            {
+                id: 2,
+                categoria: "Protestos",
+                titulo: "Polícia chilena entra em confronto com estudantes que protestam contra presidente",
+                resumo: "Manifestação em Santiago contra cortes fiscais do governo Kast termina em confrontos com a polícia.",
+                data: "03/06/2026",
+                imagem: "https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/06/2026-06-03T193A153A45Z-91524621.jpg?crop=1px,0px,1023px,682px&w=880&ver=f7a8cf5b",
+                link: "noticia-chile-protesto.html"
+            },
+            {
+                id: 3,
+                categoria: "Economia",
+                titulo: "Inflação no Chile registra queda pelo terceiro mês consecutivo",
+                resumo: "Banco Central chileno comemora indicador abaixo das projeções de mercado.",
+                data: "02/06/2026",
+                imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Inflacion+Chile",
+                link: "#"
+            },
+            {
+                id: 4,
+                categoria: "Imigração",
+                titulo: "Chile endurece regras para entrada de venezuelanos no país",
+                resumo: "Novas medidas exigem visto consular para cidadãos da Venezuela a partir de julho.",
+                data: "01/06/2026",
+                imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Imigração+Chile",
+                link: "#"
+            }
+        ];
+        
+        function criarCardChile(noticia) {
+            return `
+                <article class="card">
+                    <a href="${noticia.link}" style="text-decoration: none; color: inherit;">
+                        <img class="card-img" src="${noticia.imagem}" alt="${noticia.titulo}" loading="lazy">
+                        <div class="card-content">
+                            <span class="card-category">🇨🇱 ${noticia.categoria}</span>
+                            <h3 class="card-title">${noticia.titulo}</h3>
+                            <p class="card-summary">${noticia.resumo.substring(0, 100)}${noticia.resumo.length > 100 ? '...' : ''}</p>
+                            <div class="card-date">📅 ${noticia.data}</div>
+                        </div>
+                    </a>
+                </article>
+            `;
+        }
+        
+        function renderizarChile() {
+            const container = document.getElementById('chileNoticiasGrid');
+            if (container) {
+                container.innerHTML = chileNoticias.map(noticia => criarCardChile(noticia)).join('');
+            }
+        }
+        
+        renderizarChile();
+        
+        // ========== MENU MOBILE ==========
+        const menuToggle = document.getElementById('menuToggle');
+        const navList = document.getElementById('navList');
+        
+        if (menuToggle && navList) {
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+            
+            const navLinks = navList.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                });
+            });
+        }
+        
+        // ========== NEWSLETTER ==========
+        const newsletterForm = document.getElementById('newsletterForm');
+        const feedbackSpan = document.getElementById('formFeedback');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('newsletterEmail');
+                const email = emailInput.value.trim();
+                if (email && email.includes('@') && email.includes('.')) {
+                    feedbackSpan.textContent = '✅ Inscrição confirmada! Você receberá nossas atualizações.';
+                    feedbackSpan.style.color = '#008A2E';
+                    emailInput.value = '';
+                    setTimeout(() => { feedbackSpan.textContent = ''; }, 4000);
+                } else {
+                    feedbackSpan.textContent = '⚠️ Por favor, insira um e-mail válido.';
+                    feedbackSpan.style.color = '#B33';
+                    setTimeout(() => { feedbackSpan.textContent = ''; }, 3000);
+                }
+            });
+        }
+        
+        // Destacar link ativo
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            if (link.getAttribute('href') === 'index.html') {
+                link.style.borderBottomColor = '#000';
+                link.style.fontWeight = '600';
+            }
+        });
+    </script>
+</body>
+</html>
