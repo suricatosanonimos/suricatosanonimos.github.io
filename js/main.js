@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             { 
                 id: 3, 
-                categoria: "Economia", 
-                titulo: "Acordo comercial entre Mercosul e União Europeia é ratificado após longas negociações", 
-                resumo: "Blocos assinam tratado histórico que deve movimentar bilhões em negócios e reduzir tarifas entre os países.", 
+                categoria: "Mundo", 
+                titulo: "Kim Jong-un durante inspeção em instalação nuclear norte-coreana — KCNA / Suricatos Anônimos", 
+                resumo: "Os Estados Unidos, Japão e Coreia do Sul emitiram declarações conjuntas condenando o anúncio e pedindo o <strong>desmantelamento completo do programa nuclear</strong> de Pyongyang. O Conselho de Segurança da ONU deve se reunir nos próximos dias para discutir novas sanções contra o regime.", 
                 data: "02/06/2026", 
-                imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Mercosul+UE", 
-                link: "#" 
+                imagem: "https://s2-g1.glbimg.com/wKQtYUxj3UxOIY14h2Yji2K6Zx8=/0x0:4439x2959/600x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/n/T/ARQcA7RAeltp7AlrLa7Q/afp-20260604-b4xf9kf-v3-highres-topshotnkoreapolitics.jpg", 
+                link: "noticias/mundo/noticia-coreia-nuclear.html" 
             },
             { 
                 id: 4, 
