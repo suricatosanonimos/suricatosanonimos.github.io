@@ -4,6 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const noticias = {
         ultimas: [
             { 
+                id: 4, 
+                categoria: "Sports", 
+                titulo: "Após goleada sobre o Panamá, Seleção comandada por Carlo Ancelotti faz ajustes finais contra a equipe de Mohamed Salah em Cleveland.", 
+                resumo: "entra em campo neste sábado, dia 6 de junho de 2026, para o seu último compromisso preparatório antes da tão esperada estreia na copa.", 
+                data: "06/06/2026", 
+                imagem: "https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/treino_selecao_masculino_03062026_5c71824b8c.jpg", 
+                link: "noticias/brasil/brasil-copa-01.html" 
+            },
+            { 
                 id: 1, 
                 categoria: "Chile | Imigração", 
                 titulo: "Chile amplia detenção de imigrantes ilegais de 5 para 180 dias em nova investida do governo Kast", 
@@ -30,15 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 imagem: "https://s2-g1.glbimg.com/wKQtYUxj3UxOIY14h2Yji2K6Zx8=/0x0:4439x2959/600x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/n/T/ARQcA7RAeltp7AlrLa7Q/afp-20260604-b4xf9kf-v3-highres-topshotnkoreapolitics.jpg", 
                 link: "noticias/mundo/noticia-coreia-nuclear.html" 
             },
-            { 
-                id: 4, 
-                categoria: "Tecnologia", 
-                titulo: "Startup chilena revoluciona armazenamento de energia renovável com tecnologia inovadora", 
-                resumo: "Solução promete reduzir custos em 40% para usinas solares e ampliar capacidade de armazenamento no deserto do Atacama.", 
-                data: "01/06/2026", 
-                imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Energia+Chile", 
-                link: "#" 
-            }
         ],
         chile: [
             { 

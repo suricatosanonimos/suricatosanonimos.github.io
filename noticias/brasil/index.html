@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Notícias do Brasil - Política, economia, esportes e atualidades. Cobertura completa do cenário brasileiro no Suricatos Anônimos.">
+    <meta name="keywords" content="Brasil, notícias Brasil, política brasileira, economia Brasil, Copa 2026, Seleção Brasileira">
+    <meta name="author" content="Suricatos Anônimos">
+    <meta property="og:title" content="Notícias do Brasil | Suricatos Anônimos">
+    <meta property="og:description" content="Cobertura completa do Brasil: política, economia, esportes e atualidades. Acompanhe as principais notícias do cenário brasileiro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suricatosanonimos.github.io/noticias/brasil/">
+    <meta property="og:image" content="https://suricatosanonimos.github.io/img/noticias/brasil-og.jpg">
+    <title>Notícias do Brasil | Suricatos Anônimos</title>
+    <link rel="canonical" href="https://suricatosanonimos.github.io/noticias/brasil/">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/noticias.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../img/logo/logo.png">
+    <style>
+        .section-hero-brasil {
+            background: linear-gradient(135deg, #0a2a1a 0%, #1a472a 100%);
+            border-radius: 24px;
+            padding: 48px 32px;
+            margin-bottom: 48px;
+            color: white;
+            text-align: center;
+        }
+        .section-hero-brasil h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .section-hero-brasil p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .highlight-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        @media (max-width: 768px) {
+            .section-hero-brasil h1 {
+                font-size: 1.8rem;
+            }
+            .section-hero-brasil {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="../../index.html" class="logo">Suricatos Anônimos</a>
+                <span class="slogan">Notícias do Brasil, Chile e do mundo.</span>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="index.html" class="active">Brasil</a></li>
+                    <li><a href="../chile/index.html">Chile</a></li>
+                    <li><a href="../economia/index.html">Economia</a></li>
+                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="#">Imigração</a></li>
+                    <li><a href="../mundo/index.html">Mundo</a></li>
+                    <li><a href="../../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <!-- HERO DA SEÇÃO BRASIL -->
+            <div class="section-hero-brasil">
+                <h1>🇧🇷 Notícias do Brasil</h1>
+                <p>Acompanhe as principais notícias sobre política, economia, esportes e atualidades do cenário brasileiro. Cobertura completa e atualizada.</p>
+            </div>
+
+            <!-- NOTÍCIAS EM DESTAQUE -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📰 Em Destaque</h2>
+                    <a href="#" class="section-link">Ver todas →</a>
+                </div>
+                <div class="grid-cards" id="destaqueNoticiasGrid"></div>
+            </section>
+
+            <!-- ÚLTIMAS NOTÍCIAS DO BRASIL -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">🕐 Últimas Notícias</h2>
+                    <a href="#" class="section-link">Ver mais →</a>
+                </div>
+                <div class="grid-cards" id="ultimasBrasilGrid"></div>
+            </section>
+
+            <!-- ECONOMIA E POLÍTICA -->
+            <div class="two-columns">
+                <div class="content-main">
+                    <section class="section">
+                        <div class="section-header">
+                            <h2 class="section-title">💰 Economia</h2>
+                            <a href="#" class="section-link">Mais →</a>
+                        </div>
+                        <div class="grid-cards" id="economiaBrasilGrid"></div>
+                    </section>
+                </div>
+
+                <div class="content-main">
+                    <section class="section">
+                        <div class="section-header">
+                            <h2 class="section-title">🏛️ Política</h2>
+                            <a href="#" class="section-link">Mais →</a>
+                        </div>
+                        <div class="grid-cards" id="politicaBrasilGrid"></div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ESPORTES (DESTAQUE COPA 2026) -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">⚽ Esportes | Copa 2026</h2>
+                    <a href="#" class="section-link">Mais →</a>
+                </div>
+                <div class="grid-cards" id="esportesBrasilGrid"></div>
+            </section>
+
+            <!-- SIDEBAR COM MAIS LIDAS E CATEGORIAS -->
+            <div class="two-columns">
+                <div class="content-main">
+                    <section class="section">
+                        <div class="section-header">
+                            <h2 class="section-title">🌎 Outras Notícias</h2>
+                            <a href="#" class="section-link">Mais →</a>
+                        </div>
+                        <div class="grid-cards" id="outrasBrasilGrid"></div>
+                    </section>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">📰 Mais Lidas do Brasil</h3>
+                        <ul class="most-read-list" id="maisLidasBrasilList"></ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">📂 Categorias</h3>
+                        <ul class="categories-list">
+                            <li><a href="#">Política</a><span>18</span></li>
+                            <li><a href="#">Economia</a><span>15</span></li>
+                            <li><a href="#">Esportes</a><span>12</span></li>
+                            <li><a href="#">Educação</a><span>8</span></li>
+                            <li><a href="#">Saúde</a><span>10</span></li>
+                            <li><a href="#">Tecnologia</a><span>7</span></li>
+                            <li><a href="#">Imigração</a><span>5</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget ad-space">
+                        <div class="ad-placeholder">
+                            <p>Publicidade</p>
+                            <span>Espaço reservado para anúncio</span>
+                        </div>
+                        <div class="ad-placeholder mt-16">
+                            <p>Publicidade</p>
+                            <span>Seu anúncio aqui</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <section class="newsletter">
+                <div class="newsletter-inner">
+                    <h2 class="newsletter-title">📬 Newsletter Suricatos</h2>
+                    <p>Receba as principais notícias do Brasil, Chile e do mundo diretamente no seu e-mail.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" id="newsletterEmail" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                    </form>
+                    <span id="formFeedback" class="feedback-msg"></span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                <a href="../../sobre.html">Sobre</a>
+                <a href="../../contato.html">Contato</a>
+                <a href="../../privacidade.html">Política de Privacidade</a>
+                <a href="../../termos.html">Termos de Uso</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 Suricatos Anônimos — Informação com seriedade e independência. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        // ========== DADOS DAS NOTÍCIAS DO BRASIL ==========
+        const noticiasBrasil = {
+            destaque: [
+                {
+                    id: 1,
+                    categoria: "Esportes | Copa 2026",
+                    titulo: "Último teste! Brasil enfrenta o Egito em amistoso nos EUA antes da estreia na Copa do Mundo 2026",
+                    resumo: "Seleção comandada por Carlo Ancelotti faz ajustes finais contra a equipe de Mohamed Salah em Cleveland. Jogo acontece neste sábado.",
+                    data: "06/06/2026",
+                    imagem: "https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/treino_selecao_masculino_03062026_5c71824b8c.jpg",
+                    link: "brasil-copa-01.html"
+                },
+                {
+                    id: 2,
+                    categoria: "Economia",
+                    titulo: "Reforma tributária: Câmara aprova texto-base com novas regras para impostos",
+                    resumo: "Proposta unifica cinco tributos em IBS (Imposto sobre Bens e Serviços) e prevê alíquota única de 26,5%.",
+                    data: "05/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Reforma+Tributária",
+                    link: "#"
+                }
+            ],
+            ultimas: [
+                {
+                    id: 3,
+                    categoria: "Política",
+                    titulo: "Lula e Haddad discutem nova meta fiscal para 2027 em reunião no Planalto",
+                    resumo: "Governo estuda ampliar margem de gastos para impulsionar investimentos em infraestrutura.",
+                    data: "05/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Planalto",
+                    link: "#"
+                },
+                {
+                    id: 4,
+                    categoria: "Educação",
+                    titulo: "Enem 2026: inscrições batem recorde com mais de 4 milhões de candidatos",
+                    resumo: "Provas serão aplicadas nos dias 8 e 15 de novembro em todo o país.",
+                    data: "04/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Enem",
+                    link: "#"
+                },
+                {
+                    id: 5,
+                    categoria: "Saúde",
+                    titulo: "Ministério da Saúde anuncia ampliação do programa Farmácia Popular",
+                    resumo: "Mais 30 medicamentos serão oferecidos gratuitamente à população.",
+                    data: "03/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Farmácia+Popular",
+                    link: "#"
+                }
+            ],
+            economia: [
+                {
+                    id: 6,
+                    categoria: "Economia",
+                    titulo: "Dólar fecha em queda após anúncio de novos investimentos estrangeiros",
+                    resumo: "Moeda americana encerrou o dia cotada a R$ 5,45, menor valor em três meses.",
+                    data: "04/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Dólar",
+                    link: "#"
+                },
+                {
+                    id: 7,
+                    categoria: "Economia",
+                    titulo: "IPCA-15 desacelera em maio e aumenta expectativa de corte na Selic",
+                    resumo: "Índice de inflação ficou em 0,3%, abaixo das projeções do mercado.",
+                    data: "02/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Inflação",
+                    link: "#"
+                }
+            ],
+            politica: [
+                {
+                    id: 8,
+                    categoria: "Política",
+                    titulo: "STF retoma julgamento sobre descriminalização do porte de maconha",
+                    resumo: "Corte define parâmetros para diferenciar usuário de traficante.",
+                    data: "03/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=STF",
+                    link: "#"
+                },
+                {
+                    id: 9,
+                    categoria: "Política",
+                    titulo: "Governo anuncia pacote de incentivos para indústria automotiva",
+                    resumo: "Medida prevê R$ 5 bilhões em créditos tributários para montadoras.",
+                    data: "01/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Indústria",
+                    link: "#"
+                }
+            ],
+            esportes: [
+                {
+                    id: 10,
+                    categoria: "Esportes",
+                    titulo: "Brasil x Egito: ingressos para amistoso esgotam em poucas horas",
+                    resumo: "Torcida brasileira nos EUA promete lotar o estádio em Cleveland.",
+                    data: "05/06/2026",
+                    imagem: "https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/treino_selecao_masculino_03062026_5c71824b8c.jpg",
+                    link: "brasil-copa-01.html"
+                },
+                {
+                    id: 11,
+                    categoria: "Esportes",
+                    titulo: "Vini Jr. é eleito melhor jogador do mês de maio na La Liga",
+                    resumo: "Atacante brasileiro marcou 4 gols em 3 jogos pelo Real Madrid.",
+                    data: "04/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Vini+Jr",
+                    link: "#"
+                }
+            ],
+            outras: [
+                {
+                    id: 12,
+                    categoria: "Tecnologia",
+                    titulo: "Brasil lança satélite Amazônia-2 para monitoramento da floresta",
+                    resumo: "Equipamento foi desenvolvido em parceria com China e custou R$ 400 milhões.",
+                    data: "02/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Satélite",
+                    link: "#"
+                },
+                {
+                    id: 13,
+                    categoria: "Imigração",
+                    titulo: "Número de brasileiros voltando ao país cresce 30% em 2026",
+                    resumo: "Fim de programas de visto em Portugal e EUA influencia retorno.",
+                    data: "01/06/2026",
+                    imagem: "https://placehold.co/600x400/2d2d2d/FFFFFF?text=Imigração",
+                    link: "#"
+                }
+            ]
+        };
+
+        // Mais Lidas do Brasil
+        const maisLidasBrasil = [
+            "Último teste! Brasil enfrenta o Egito em amistoso nos EUA",
+            "Reforma tributária: Câmara aprova texto-base",
+            "STF retoma julgamento sobre descriminalização do porte de maconha",
+            "Dólar fecha em queda após anúncio de novos investimentos",
+            "Vini Jr. é eleito melhor jogador do mês na La Liga"
+        ];
+
+        // Função para criar card
+        function criarCard(noticia) {
+            return `
+                <article class="card">
+                    <a href="${noticia.link}" style="text-decoration: none; color: inherit;">
+                        <img class="card-img" src="${noticia.imagem}" alt="${noticia.titulo}" loading="lazy">
+                        <div class="card-content">
+                            <span class="card-category">🇧🇷 ${noticia.categoria}</span>
+                            <h3 class="card-title">${noticia.titulo}</h3>
+                            <p class="card-summary">${noticia.resumo.substring(0, 100)}${noticia.resumo.length > 100 ? '...' : ''}</p>
+                            <div class="card-date">📅 ${noticia.data}</div>
+                        </div>
+                    </a>
+                </article>
+            `;
+        }
+
+        function renderizarGrid(containerId, arrayNoticias) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.innerHTML = arrayNoticias.map(noticia => criarCard(noticia)).join('');
+            }
+        }
+
+        // Renderizar grids
+        renderizarGrid('destaqueNoticiasGrid', noticiasBrasil.destaque);
+        renderizarGrid('ultimasBrasilGrid', noticiasBrasil.ultimas);
+        renderizarGrid('economiaBrasilGrid', noticiasBrasil.economia);
+        renderizarGrid('politicaBrasilGrid', noticiasBrasil.politica);
+        renderizarGrid('esportesBrasilGrid', noticiasBrasil.esportes);
+        renderizarGrid('outrasBrasilGrid', noticiasBrasil.outras);
+
+        // Preencher mais lidas
+        const maisLidasList = document.getElementById('maisLidasBrasilList');
+        if (maisLidasList) {
+            maisLidasList.innerHTML = maisLidasBrasil.map((item, index) => `<li><a href="#">📌 ${index + 1}. ${item}</a></li>`).join('');
+        }
+
+        // Menu Mobile Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navList = document.getElementById('navList');
+        if (menuToggle && navList) {
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+            const navLinks = navList.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                });
+            });
+        }
+
+        // Newsletter
+        const newsletterForm = document.getElementById('newsletterForm');
+        const feedbackSpan = document.getElementById('formFeedback');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('newsletterEmail');
+                const email = emailInput.value.trim();
+                if (email && email.includes('@') && email.includes('.')) {
+                    feedbackSpan.textContent = '✅ Inscrição confirmada! Você receberá nossas atualizações.';
+                    feedbackSpan.style.color = '#008A2E';
+                    emailInput.value = '';
+                    setTimeout(() => { feedbackSpan.textContent = ''; }, 4000);
+                } else {
+                    feedbackSpan.textContent = '⚠️ Por favor, insira um e-mail válido.';
+                    feedbackSpan.style.color = '#B33';
+                    setTimeout(() => { feedbackSpan.textContent = ''; }, 3000);
+                }
+            });
+        }
+
+        // Destacar link ativo
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            if (link.getAttribute('href') === 'index.html') {
+                link.style.borderBottomColor = '#000';
+                link.style.fontWeight = '600';
+            }
+        });
+    </script>
+</body>
+</html>
